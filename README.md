@@ -8,7 +8,7 @@
 ## Project Structure
 1. **Autorizador**  
 
-* Has the Mastercard ISO8583 (V1) message parser  
+* The Mastercard ISO8583 (V1) message parser  
 
 2. **CommonInterfaces**  
 
@@ -16,7 +16,7 @@
 
 3. **EasyISO**  
 
-* Has the main class and classes that are GUI (_grafical user interface_).  
+* The main class and classes that are GUI (_grafical user interface_).  
 
 4. **FormataCECI**  
 
