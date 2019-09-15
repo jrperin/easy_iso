@@ -1,0 +1,6 @@
+# Ignorar os arquivos DS_Store
+.DS_Store
+._.DS_Store
+
+bin
+obj
