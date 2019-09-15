@@ -1,5 +1,9 @@
 # Easy ISO Project
 
+## Project has some errors
+This project was started on feb/2012 and wasn't finished.  
+
+
 ## How to use it
 
 1. Clone this project.
@@ -48,6 +52,10 @@
 ![easy iso 2](https://raw.githubusercontent.com/jrperin/easy_iso/master/Docs/screenshots/6_easyiso.png)
 
 ![easy iso 3](https://raw.githubusercontent.com/jrperin/easy_iso/master/Docs/screenshots/5_easyiso.png)
+
+**The error that is happening**
+![easy iso 9 1](https://raw.githubusercontent.com/jrperin/easy_iso/master/Docs/screenshots/9_1_error_when_parse_message_hexa.png)
+
 
 
 
