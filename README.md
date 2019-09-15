@@ -33,7 +33,12 @@
 
 ## Screen Shots
 
-![easy iso](https://raw.githubusercontent.com/jrperin/easy_iso/master/Docs/screenshots/6_easyiso.png)
+![easy iso 0](https://raw.githubusercontent.com/jrperin/easy_iso/master/Docs/screenshots/0_eclipse_project_structure.png)
+
+![easy iso 1](https://raw.githubusercontent.com/jrperin/easy_iso/master/Docs/screenshots/6_easyiso.png)
+
+![easy iso 2](https://raw.githubusercontent.com/jrperin/easy_iso/master/Docs/screenshots/4_easyiso.png)
+
 
 
 
