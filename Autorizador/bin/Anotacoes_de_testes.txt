@@ -1,0 +1,64 @@
+ANOTACOES DE CASOS DE TESTES:	
+	
+	
+			F0F1F0F0FEE7440188E1E00A0000000000000100F1F6F5F3F9F0F5F9F8F6F0F3F4F4F5F5F0F3F0F0F0F0F0F0F0F0F0F0F0F0F0F0F1F4F5F7F0F0F0F0F0F0F0F0F0F8F1F3F0F0F0F0F0F0F0F0F1F4F5F7F1F2F0F7F1F3F1F5F0F0F5F5F5F7F8F4F8F9F6F1F0F0F0F0F0F0F3F8F0F3F9F5F1F3F0F6F1F2F0F7F1F2F0F7F4F8F1F4F8F1F2F0F6F0F1F1F4F2F9F0F6F0F0F1F2F9F7F0F2F2F0F2F4F4F8F0F4F3F8F0F0F0F0F0F0F0F1F0F0F0F9F8F0F0F2F0F3F0F5F9F9F4D7C1E8D7C1D3405C32D2E8D7C540404040404040404040F3F5F3F1F4F3F6F9F0F0F1404040D3E4E7F0F2F7E3F8F2F0F2F5F2F4F2F0F7F0F1F0F3F2F1F0F6F1F0F5F0F0F0F0F0F9F8F6F8F4F0F9F8F6F0F2F6F0F0F2F5F1F0F0F0F0F6F6F0F0F4F4F2D3F1F5F2F04040404040F0F0F9D4C3E2F8E8C2E4C2D1F0F3F3F0F1F2F9F3F1F1F1F0F0F5F040D9A48140D18183A48940F6F640829340F4408197
+		
+			String primeiraPalavra= "0000000000x12";  
+			Pattern pattern = Pattern.compile("\\D");  
+            Matcher matcher = pattern.matcher(primeiraPalavra);  
+            System.out.println("matcher.find() = " + matcher.find() );
+            if (matcher.find())  
+                System.out.println("Expressão Regular: " + matcher.group());  
+            else  
+                System.out.println("Expressão Regular: Null");  
+       
+		
+		  
+		  float f = 10.0F;
+		  int j = (int)f;
+		  System.out.println("Float data: " + f);
+		  System.out.println("Integer data: " + j);
+		
+		
+		int x = 100;
+		String value  = Integer.toString(x);
+		System.out.println("Valor de String.valueOf (" + x + ") = " + value);
+		int tam = 5;
+		
+		value = "0000000000" + value;
+		System.out.println("Value.length = " + value.substring(value.length() - 10, value.length() ) );
+		
+	
+	
+	
+	
+	
+	/*
+		for (char a = 0 ; a < 225; a++){
+			System.out.println("Caracter " + a + " EBCDIC = " + String.valueOf(Converter.convertEbcdic2Ascii(a)) + " ASCII");
+		}
+		*/
+	
+	
+		char[] teste = 
+		Converter.getBitmap(new boolean[]{true,false,false,false,false,false,false,true,
+				                          false,true,false,false,false,false,false,true,
+				                          false,false,true,false,false,false,false,true,
+				                          false,false,false,true,false,false,false,true,
+				                          false,false,false,false,true,false,false,true,
+				                          false,false,false,false,false,true,false,true,
+				                          false,false,false,false,false,false,true,true,
+				                          false,true,true,true,true,true,true,true});
+		System.out.println("----------------- Converter.getBitmap ------------------------------");
+		for (char c : teste){
+			System.out.println("" + (int) c);
+		}
+		
+		System.out.println("----------------- Converter.getArrayBitmap -------------------------");
+		boolean[] teste2 = 
+		Converter.getArrayBitmap(teste);
+		for (boolean b : teste2){
+			System.out.println(b);
+		}
+		
+		System.out.println("-----------------------------------------------------------");

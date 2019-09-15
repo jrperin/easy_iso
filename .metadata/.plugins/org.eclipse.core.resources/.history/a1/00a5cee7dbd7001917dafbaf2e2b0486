@@ -1,0 +1,221 @@
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.Font;
+
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
+
+
+public class JanelaPrincipal extends JPanel implements ActionListener{
+
+	  /**
+	 * 
+	 */
+	private static final long serialVersionUID = -8328258483594202039L;
+	final String TXT_INPUT     = "Area a ser formatada:";
+	  final String TXT_FORMATADA = "Area formatada:";
+	  final String TXT_OBS       = "Anotacoes:";
+	  final String TXT_JRPerin   = "JRPerin (17/nov/2011 - Ver 2.0)";
+	  
+      private JLabel lInput;
+      private JLabel lFormatada;
+      private JLabel lObs;
+      private JLabel lJRPerin;
+
+      private JTextArea tfInput;
+      private JTextArea tfFormatada;
+      private JTextArea tfObs;
+      
+      private JScrollPane sclInput;
+      private JScrollPane sclFormatada;
+      private JScrollPane sclObs;
+
+
+      private JButton bFormatar;
+      private JButton bSair;
+
+      private JPanel pInput;
+      private JPanel pFormatada;
+      private JPanel pObs;
+      
+      private JPanel pPrincipal;
+      private JPanel pRodape;
+      private JPanel pBotoes;
+      private JPanel pJRPerin;
+      
+      private JCheckBox ckbDeixarSpaces;
+      
+      private Formatador f;
+
+
+      public JanelaPrincipal() throws Exception {
+
+            this.setLayout(new BorderLayout());
+
+            pPrincipal = new JPanel();
+            pPrincipal.setLayout(new GridLayout(0,1));
+            
+            Font fnt = new Font(Font.MONOSPACED, 12, 14);
+            
+            
+            //--------------------- MONTA PAINEL INPUT -----------------------------------------------------//
+            pInput = new JPanel();
+            pInput.setBorder(new EmptyBorder(15,15,15,15));
+            pInput.setLayout(new BorderLayout(0,2));
+            
+            lInput = new JLabel(TXT_INPUT);
+            tfInput = new JTextArea("",20,32);
+            tfInput.setLineWrap(true);
+            tfInput.setWrapStyleWord(true);
+            tfInput.setBorder(BorderFactory.createEmptyBorder(4, 4, 4, 4));
+            
+            tfInput.setFont(fnt); 
+            
+            sclInput = new JScrollPane(tfInput);
+            sclInput.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+            
+            pInput.add(lInput, BorderLayout.NORTH);
+            pInput.add(sclInput, BorderLayout.CENTER);
+
+            
+            //--------------------- MONTA PAINEL FORMATAR -------------------------------------------------//
+            pFormatada = new JPanel();
+            pFormatada.setBorder(new EmptyBorder(15,15,15,15));
+            pFormatada.setLayout(new BorderLayout(0,2));
+            
+            lFormatada = new JLabel(TXT_FORMATADA);
+            
+            tfFormatada = new JTextArea("",20,32);
+            tfFormatada.setLineWrap(true);
+            tfFormatada.setWrapStyleWord(true);
+            tfFormatada.setBorder(BorderFactory.createEmptyBorder(4, 4, 4, 4));
+
+            tfFormatada.setFont(fnt); 
+
+            sclFormatada = new JScrollPane(tfFormatada);
+            sclFormatada.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+            
+            pFormatada.add(lFormatada, BorderLayout.NORTH);
+            pFormatada.add(sclFormatada, BorderLayout.CENTER);
+            
+            //--------------------- MONTA PAINEL OBSERVACAO -----------------------------------------------//
+            pObs = new JPanel();
+            pObs.setBorder(new EmptyBorder(15,15,15,15));
+            pObs.setLayout(new BorderLayout(0,2));
+            
+            lObs = new JLabel(TXT_OBS);
+            tfObs = new JTextArea("",04,32);
+            tfObs.setLineWrap(true);
+            tfObs.setWrapStyleWord(true);
+            tfObs.setBorder(BorderFactory.createEmptyBorder(4, 4, 4, 4));
+            sclObs = new JScrollPane(tfObs);
+            sclObs.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+            
+            pObs.add(lObs, BorderLayout.NORTH);
+            pObs.add(sclObs, BorderLayout.CENTER);
+            
+            
+            
+            
+            pPrincipal.add(pInput,    BorderLayout.NORTH);
+            pPrincipal.add(pFormatada, BorderLayout.CENTER);
+            pPrincipal.add(pObs,      BorderLayout.SOUTH);
+
+            pRodape   = montaPainelBotoes();
+            
+            this.add(pPrincipal, BorderLayout.CENTER);
+            this.add(pRodape,    BorderLayout.SOUTH);
+
+            
+            f = new Formatador();
+            
+      }
+
+
+      private JPanel montaPainelBotoes() {
+
+            
+            JPanel pRodape = new JPanel();
+            pRodape.setLayout(new GridLayout(1,2,15,15));
+            
+            JPanel pJRPerin = new JPanel();
+            pJRPerin.setLayout(new FlowLayout(FlowLayout.LEFT, 15, 5));
+            ckbDeixarSpaces = new JCheckBox("Deixar Espacos");
+            ckbDeixarSpaces.addActionListener(this);
+            //lJRPerin = new JLabel(TXT_JRPerin);
+            pJRPerin.add(ckbDeixarSpaces);
+            
+            
+            JPanel pBotoes = new JPanel();
+            pBotoes.setLayout(new FlowLayout(FlowLayout.RIGHT, 15, 05)); //--> 5, 5 = espaco de 5 x 5 pixels
+
+            bFormatar = new JButton("Formatar");
+            bFormatar.setMnemonic(KeyEvent.VK_F);
+            bFormatar.addActionListener(this);
+
+            bSair = new JButton("Sair");
+            bSair.setMnemonic(KeyEvent.VK_S);
+            bSair.addActionListener(this);
+
+            pBotoes.add(bFormatar);
+            pBotoes.add(bSair);
+
+            pRodape.add(pJRPerin, BorderLayout.WEST);
+            pRodape.add(pBotoes, BorderLayout.EAST);
+            
+            return pRodape;
+
+      }
+      
+      private void setTFFormatada(){
+    	  if (ckbDeixarSpaces.isSelected()){
+			  tfFormatada.setText(f.getAreaComSpaces());
+		  }else{
+			  tfFormatada.setText(f.getAreaSemSpaces());
+		  }
+      }
+      
+      
+      public void actionPerformed(ActionEvent e) {
+
+// --- DEBUG -------------    	  
+//    	  System.out.println("getActionCommand: " + e.getActionCommand() + 
+//    	                     " - getID: " + e.getID() + " - paramString: " + e.paramString());
+	          
+    	  
+    	  if (e.getActionCommand().equals("Sair")){
+    		  System.exit(1); 
+    	  }
+    	  
+    	  
+    	  if (e.getActionCommand().equals("Formatar")){
+    		 // System.out.println(tfInput.getText());
+    		  
+    		  f = new Formatador(tfInput.getText());
+    		  setTFFormatada();
+    		  tfObs.setText("Tamanho = " + f.getNCaracteres());
+    	  }
+    	  
+    	  if (e.getActionCommand().equals("Deixar Espacos")){
+    		  setTFFormatada();
+    	  }
+    	  	
+      }
+
+ 
+
+}
+
+		
