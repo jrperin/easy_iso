@@ -89,7 +89,7 @@ public class EasyISO implements Command{
 				*/
 				
 				if (arg.length == 1){
-					NovoHexaGui n = new NovoHexaGui(this, "Inserir Area em HEXA", 400, 500);
+					NovoHexaGui n = new NovoHexaGui(this, "Inserir �rea em HEXA", 400, 500);
 				} else if (arg.length == 3){
 					//DEBUG
 					/*
@@ -172,7 +172,7 @@ public class EasyISO implements Command{
 		int intOpcao = JOptionPane.showConfirmDialog(easyIsoGui, "Deseja sair do programa?", "Alerta", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
 		/*
 		JOptionPane.showOptionDialog(null,   
-		        "Deseja Cancelar Importacao?",   
+		        "Deseja Cancelar Importa��o?",   
 		        "Importando Projeto",  
 		        0,  
 		        JOptionPane.QUESTION_MESSAGE,  

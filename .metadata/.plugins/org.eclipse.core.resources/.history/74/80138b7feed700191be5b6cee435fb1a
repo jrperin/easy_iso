@@ -89,7 +89,7 @@ public class EasyISO implements Command{
 				*/
 				
 				if (arg.length == 1){
-					NovoHexaGui n = new NovoHexaGui(this, "Inserir Area em HEXA", 400, 500);
+					NovoHexaGui n = new NovoHexaGui(this, "Inserir �rea em HEXA", 400, 500);
 				} else if (arg.length == 3){
 					//DEBUG
 					/*
